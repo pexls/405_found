@@ -32,7 +32,6 @@ export default function Sidebar() {
           <li className="sidebarListItem">
             <span className="sidebarListItemText">My Groups</span>
           </li>
-          <li className="sidebarFriend"><img className="sidebarFriendImg" src="assets/person/1.jpeg" alt="" /><span className="sidebarFriendName">Safak Kocaoglu</span></li>
          <li>{Users.map((u) => (
             <CloseFriend key={u.id} user={u} />
           ))}</li> 
