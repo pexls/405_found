@@ -11,7 +11,7 @@ import Groups from "./pages/Groups/Groups";
 
 function App() {
   return(
-    <>
+    <div>
   <Routes>
      <Route path="/home" element={ <Home/> } />
      <Route path="/" element={ <Login/> } />
@@ -21,7 +21,7 @@ function App() {
      <Route path="/group" element={ <Groups/> } />
 
    </Routes>
-</>
+</div>
 )
 
 }
