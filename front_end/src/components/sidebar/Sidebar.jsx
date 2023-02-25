@@ -27,33 +27,20 @@ export default function Sidebar() {
             <BiGroup className="sidebarIcon" />
             <span className="sidebarListItemText">Groups</span>
           </li>
+        
+        
           <li className="sidebarListItem">
-            <BsFillBookmarkFill className="sidebarIcon" />
-            <span className="sidebarListItemText">Bookmarks</span>
+            <span className="sidebarListItemText">My Groups</span>
           </li>
-          <li className="sidebarListItem">
-            <MdHelpOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Questions</span>
-          </li>
-          <li className="sidebarListItem">
-            <span className="sidebarListItemText">Jobs</span>
-          </li>
-          <li className="sidebarListItem">
-            <BiCalendarEvent className="sidebarIcon" />
-            <span className="sidebarListItemText">Events</span>
-          </li>
-          <li className="sidebarListItem">
-            <IoMdSchool className="sidebarIcon" />
-            <span className="sidebarListItemText">Courses</span>
-          </li>
-        </ul>
-        <button className="sidebarButton">Show More</button>
-        <hr className="sidebarHr" />
-        <ul className="sidebarFriendList">
-          {Users.map((u) => (
+          <li className="sidebarFriend"><img className="sidebarFriendImg" src="assets/person/1.jpeg" alt="" /><span className="sidebarFriendName">Safak Kocaoglu</span></li>
+         <li>{Users.map((u) => (
             <CloseFriend key={u.id} user={u} />
-          ))}
+          ))}</li> 
         </ul>
+        
+        
+          
+       
       </div>
     </div>
   );
