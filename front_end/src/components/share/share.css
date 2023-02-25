@@ -5,72 +5,45 @@
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   }
+
+label{
   
-  .shareWrapper {
-    padding: 10px;
+}
+  .image-upload > input {
+    visibility:hidden;
+    width:0;
+    height:0
   }
-  
-  .shareTop {
-    display: flex;
-    align-items: center;
-  }
-  
-  .shareProfileImg {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .shareInput {
-    border: none;
-    width: 80%;
-  }
-  
-  .shareInput:focus {
-    outline: none;
-  }
-  
-  .shareHr {
-    margin: 20px;
-  }
-  
-  .shareBottom {
+ .create-post{
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+#create-post{
+  border: 1px white solid;
+  width: 50%;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color:#313338;
+  border-radius: 20px;
+
+}
+.create-post input[type="text"]{
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem;
+}
   
-  .shareOptions{
-      display: flex;
-      margin-left: 20px;
-  }
   
-  .shareOption{
-      display: flex;
-      align-items: center;
-      margin-right: 15px;
-      cursor: pointer;
-  }
-  
-  .shareIcon{
-      font-size: 18px;
-      margin-right: 3px;
-  }
-  
-  .shareOptionText{
-      font-size: 14px;
-      font-weight: 500;
-  }
-  
-  .shareButton{
-      border: none;
-      padding: 7px;
-      border-radius: 5px;
-      background-color: green;
-      font-weight: 500;
-      margin-right: 20px;
-      cursor: pointer;
-      color: white;
-  }

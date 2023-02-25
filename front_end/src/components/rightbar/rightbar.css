@@ -4,27 +4,22 @@
   --btn-padding: 0.6rem 2rem;
   --search-padding: 0.6rem 1rem;
   --card-padding: 1rem;
-  --color-white: hsl(252, 30%, 100%);
+  --color-white: #2B2D31;
   --color-gray: hsl(252, 15%, 65%);
-  --color-light:hsl(252, 30%, 90%);
+  --color-light:hsl(0, 0%, 96%);
   --color-dark: hsl(252, 30%, 17%);
-  --color-primary: hsl(252, 75%, 60%);
+  --color-primary: #FF000E;
   --color-success: hsl(120, 95%, 60%);
   --color-danger: hsl(0, 95%, 65%);
   --color-black: hsl(252, 30%, 10%);
   --sticky-top-left: 5.4rem;
   --sticky-top-right: -18rem;
+  
   }
-
-
-
- 
-  
-  
   
   .profile-pic{
     width: 2.7rem;
-    aspect-ratio: 1/1;
+    margin: 5px;
     border-radius: 50%;
     overflow: hidden;
   }
@@ -37,19 +32,22 @@
   .btnm{
     display: inline-block;
     padding: var(--btn-padding);
-    font-weight: 500;
-    border-radius: var(--border-radius);
+    font-weight: 400;
+    border-radius: var(--border-radius );
+    border: black 1px none ;
     cursor: pointer;
     transition: all 300ms ease;
+    margin: 2px;
+    color: #fff;
   }
   
-  .btn:hover{
+  .btnm:hover{
     opacity: 0.8;
   }
   
   .btnm-primary{
     background: var(--color-primary);
-    color: white;
+    color: rgb(255, 255, 255);
   }
 .rightbar {
     flex: 3.5;
@@ -64,56 +62,9 @@
     align-items: center;
   }
   
-  .birthdayImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
   
-  .birthdayText {
-    font-weight: 300;
-    font-size: 15px;
-  }
   
-  .rightbarAd {
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px 0;
-  }
   
-  .rightbarTitle{
-      margin-bottom: 20px;
-  }
-  
-  .rightbarFriendList {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .rightbarTitle{
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .rightbarInfo{
-    margin-bottom: 30px;
-  }
-  
-  .rightbarInfoItem{
-    margin-bottom: 10px;
-  }
-  
-  .rightbarInfoKey{
-    font-weight: 500;
-    margin-right: 15px;
-    color: #555;
-  }
-  
-  .rightbarInfoValue{
-    font-weight: 300;
-  }
   
   .rightbarFollowings{
     display: flex;
@@ -135,43 +86,36 @@
     border-radius: 5px;
   }
 
-  .main .container .right{
+ .right{
     height: max-content;
     position: sticky;
     top: var(--sticky-top-right);
     bottom: 0;
 }
 
-.right .messages{
+.messages{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     
 }
 
-.right .messages .heading{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
+ 
 
-.right .messages i{
-    font-size: 1.4rem;
-}
 
-.right .messages .search-bar{
+
+.search-bar{
     display: flex;
     margin-bottom: 1rem;
 }
 
-.right .messages .category{
+.category{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.right .messages .category h6{
+.category h6{
     width: 100%;
     text-align: center;
     border-bottom: 4px solid var(--color-light);
@@ -179,39 +123,40 @@
     font-size: 0.85rem;
 }
 
-.right .messages .category .active{
+ .active{
     border-color: var(--color-dark);
 }
 
-.right .messages .message-requests{
+ .message-requests{
     color: var(--color-primary);
 }
 
-.right .message .profile-pic{
+ .profile-pic{
     position: relative;
     overflow: visible;
+    
 }
 
-.right .profile-pic img{
+.profile-pic img{
     border-radius: 50%;
 }
 
-.right .messages .message{
+ .message{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
     align-items: start;
 }
 
-.right .messages .message:last-child{
+ .message:last-child{
     margin: 0;
 }
 
-.right .messages .message p{
+p{
     font-size: 0.8rem;
 }
 
-.right .messages .message .profile-pic .active{
+ .profile-pic .active{
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
@@ -224,29 +169,29 @@
 }
 
 
-.right .friend-requests{
+ .friend-requests{
     margin-top: 1rem;
 }
 
-.right .friend-requests h4{
+ .friend-requests h4{
     color: var(--color-gray);
     margin: 1rem 0;
 }
 
-.right .request{
+ .request{
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
 }
 
-.right .request .info{
+ .info{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.right .request .action{
+.action{
     display: flex;
     gap: 1rem;
 }
@@ -310,6 +255,41 @@
     main .container .right{
         display: none;
     }
+}
+
+
+/* ------------------ Edit profile -------------------- */
+
+a {
+  text-decoration: none !important;
+  color: #fff !important;
+
+}
+.style {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff !important;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+ text-decoration: none !important;
+}
+
+#editbtn{
+    text-decoration: none !important;
+     color: #fff !important;
+}
+.style:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.style:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 
