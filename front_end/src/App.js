@@ -1,6 +1,7 @@
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/profile/EditProfile";
 import Register from "./pages/register/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SingleGroup from "./pages/Groups/SingleGroup"
@@ -33,5 +34,6 @@ function App() {
 
 >>>>>>> a00bbf162dafe257270666a3aa3dcd27d0520bdc
 }
+
 
 export default App;
