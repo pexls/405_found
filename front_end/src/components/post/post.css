@@ -1,3 +1,10 @@
+
+
+
+
+
+
+/* 
 .post {
     width: 100%;
     border-radius: 10px;
@@ -75,4 +82,117 @@
       cursor: pointer;
       border-bottom: 1px dashed gray;
       font-size: 15px;
+  } */
+
+  :root{
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+    --color-white: hsl(252, 30%, 100%);
+    --color-gray: hsl(252, 15%, 65%);
+    --color-light:hsl(252, 30%, 90%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-success: hsl(120, 95%, 60%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-black: hsl(252, 30%, 10%);
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+    }
+    
+    
+    *,*::before,*::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        border: 0;
+    }
+    .container{
+      width: 80%;
+      margin: 0 auto;
   }
+ .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ .container{
+  display: grid;
+  grid-template-columns: 18vw auto 20vw;
+  gap: 2rem;
+  position: relative;
+}
+   .container .right{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+  
+.middle .feeds .feedd{
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.middle .feedd .head{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.middle .feedd .user{
+  display: flex;
+  gap: 1rem;
+}
+
+.middle .feedd .photo{
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  margin: 0.7rem 0;
+}
+.middle .feedd .action-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
+.middle .feedd .head{
+  display: flex;
+  justify-content: space-between;
+
+}
+.middle .feedd .user{
+  display: flex;
+  gap: 1rem;
+}
+.right .request .info{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.middle .feedd .action-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
+.middle .feeds .feedd{
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+

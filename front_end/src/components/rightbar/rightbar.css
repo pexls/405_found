@@ -24,7 +24,7 @@
   
   .profile-pic{
     width: 2.7rem;
-    aspect-ratio: 1/1;
+    margin: 5px;
     border-radius: 50%;
     overflow: hidden;
   }
@@ -37,13 +37,15 @@
   .btnm{
     display: inline-block;
     padding: var(--btn-padding);
-    font-weight: 500;
-    border-radius: var(--border-radius);
+    font-weight: 400;
+    border-radius: var(--border-radius );
+    border: black 1px none ;
     cursor: pointer;
     transition: all 300ms ease;
+    margin: 2px;
   }
   
-  .btn:hover{
+  .btnm:hover{
     opacity: 0.8;
   }
   
