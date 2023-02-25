@@ -13,6 +13,8 @@ export default function Rightbar({ profile }) {
       <span><i className="uil uil-edit"></i></span>
     </div>
     <div className="search-bar">
+  <span><i className="uil uil-search"></i></span>
+  <input type="search" placeholder="Search Messages" id="message-search" />
 </div>
 
 <div className="category">

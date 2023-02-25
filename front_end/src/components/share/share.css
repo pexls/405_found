@@ -1,12 +1,12 @@
 .share {
-    width: 100%;
+    width: 80%;
     height: 170px;
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   }
  .create-post{
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +19,16 @@
   border: 1px black none;
   width: 50%;
 }
-.middle .create-post input[type="text"]{
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color:#313338;
+  border-radius: 20px;
+
+}
+.create-post input[type="text"]{
     justify-self: start;
     width: 100%;
     padding-left: 1rem;
