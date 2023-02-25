@@ -1,7 +1,69 @@
+:root{
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+    --color-white: #2B2D31;
+    --color-whie: #434344;
+    --color-gray: hsl(252, 15%, 65%);
+    --color-light:hsl(0, 0%, 96%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-primary: #FF000E;
+    --color-success: hsl(120, 95%, 60%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-black: hsl(252, 30%, 10%);
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+    
+    }
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .feed{
-    flex:5.5
+    flex:4;
+    padding: 10px;
+    background:var(--color-whie) ;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    width: 100%;
+    
 }
 
 .feedWrapper{
     padding: 20px;
 }
+.deev{
+    margin-left: 20px;
+   
+}
+
+   .photo{
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+   
+  }
+  .action-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+  }
+   
+  .user{
+    display: flex;
+    gap: 1rem;
+  }
+  .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+   
+  
