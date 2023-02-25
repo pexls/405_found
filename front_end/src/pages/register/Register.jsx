@@ -27,7 +27,7 @@ export default class Register extends Component {
     constructor(props) {
         super(props);
           this.state = {
-            fullName: null,
+            name: null,
             email: null,
             password: null,
             phone: null,
@@ -36,7 +36,7 @@ export default class Register extends Component {
             accept:false,
             users:[],
             errors: {
-              fullName: '',
+              name: '',
               email: '',
               phone: '',
               password: '',
@@ -64,12 +64,13 @@ export default class Register extends Component {
           console.log(event);
           // event.preventDefault();
           const { name, value } = event.target;
-  //         let name = event.target.name;
-  // let value = event.target.value;
+          console.log( event.target.name, event.target.value );
+            // let name = event.target.name;
+            // let value = event.target.value;
           let errors = this.state.errors;
           switch (name) {
-            case 'fullName': 
-              errors.fullName = 
+            case 'name': 
+              errors.name = 
                 value.length < 5
                   ? 'Full Name must be 5 characters long!'
                   : '';
@@ -115,18 +116,18 @@ export default class Register extends Component {
               console.log(errors)
           })
         }
+
+
+
         handleSubmit = (event) => {
           event.preventDefault();
-          this.setState({
-              accept:true,
+          this.setState({accept:true,})
+
+          const { name, email,password,phone } = this.state;
   
-          })
-          const { fullName, email,password,phone } = this.state;
-  
-  // 
           let errors = this.state.errors;
-          if(fullName === null){
-              errors.fullName =  'Name is required'
+          if(name === null){
+              errors.name =  'Name is required'
           }
           if(email=== null){
               errors.email =  'email is required'
@@ -141,16 +142,16 @@ export default class Register extends Component {
           this.setState({errors}, ()=> {
               console.log(errors)
           })
-  // 
+  
           if(validateForm(this.state.errors)) {
             console.info('Valid Form')
-            // let newUser ={fullName:this.state.fullName,email:this.state.email,password:this.state.password}
+            // let newUser ={name:this.state.name,email:this.state.email,password:this.state.password}
             // this.users.push(newUser);
-            let inputs = {fullName:this.state.fullName,email:this.state.email,phone:this.state.phone,password:this.state.password}
+            let inputs = {name:this.state.name,email:this.state.email,phone:this.state.phone,password:this.state.password}
             axios.post("http://localhost:80/405_found/back_end/user.php/save",inputs)
             .then((respone)=>{
                 console.log(respone.data);
-                window.location.pathname = "/user/login";
+                // window.location.pathname = "a";
             })
     
   
@@ -161,6 +162,11 @@ export default class Register extends Component {
           console.log( this.users);
   
         }
+      
+
+
+
+
   render() {
     const {errors} = this.state;
 
@@ -175,40 +181,40 @@ export default class Register extends Component {
           </div>
           <div className="loginRight">
             <div className="loginBox">
-            <form method="POST" onSubmit={this.handleSubmit} noValidate >
+      <form method="POST" onSubmit={this.handleSubmit} noValidate >
 
           <InputGroup className="mb-3">
-              <FloatingLabel controlId="floatingPassword" label="Full name">
-              <Form.Control aria-label="fullName" placeholder="Full name" type='text' name='fullName' onChange={this.handleChange} noValidate />
-              {errors.fullName.length > 0 && this.state.accept && <span className='error'>{errors.fullName}</span>}
+              <FloatingLabel  label="Full name">
+              <Form.Control aria-label="name" placeholder="Full name" type='text' name='name' onChange={this.handleChange} noValidate />
+              {errors.name.length > 0 && this.state.accept && <span className='error'>{errors.name}</span>}
               </FloatingLabel>  
           </InputGroup>
           <InputGroup className="mb-3">
-              <FloatingLabel controlId="floatingPassword" label="Email">
+              <FloatingLabel  label="Email">
               <Form.Control aria-label="email" placeholder="email"  type='email' name='email' onChange={this.handleChange} noValidate/>
               {errors.email.length > 0 && this.state.accept && <span className='error'>{errors.email}</span>}
               </FloatingLabel>  
           </InputGroup>
           <InputGroup className="mb-3">
-              <FloatingLabel controlId="floatingPassword" label="Phone">
+              <FloatingLabel  label="Phone">
               <Form.Control aria-label="Phone" placeholder="phone"  type='text' name='phone' onChange={this.handleChange} noValidate />
               {errors.phone.length > 0 && this.state.accept && <span className='error'>{errors.phone}</span>}
               </FloatingLabel>  
           </InputGroup>
           <InputGroup className="mb-3">
-              <FloatingLabel controlId="floatingPassword" label="Password">
-              <Form.Control aria-label="password" placeholder="password" name="password" onChange={this.handleChange} noValidate />
+              <FloatingLabel  label="Password">
+              <Form.Control aria-label="password" type='password' placeholder="password" name="password" onChange={this.handleChange} noValidate />
               {errors.password.length > 0 && this.state.accept && <span className='error'>{errors.password}</span>}
               </FloatingLabel>  
           </InputGroup>
           <InputGroup className="mb-3">
-              <FloatingLabel controlId="floatingPassword" label="Confirm Password">
-              <Form.Control aria-label="confirmpassword" placeholder="Confirm password" name='repassword' onChange={this.handleChange} noValidate />
+              <FloatingLabel  label="Confirm Password">
+              <Form.Control aria-label="confirmpassword" type='password' placeholder="Confirm password" name='repassword' onChange={this.handleChange} noValidate />
               {errors.repassword.length > 0 && this.state.accept && <span className='error'>{errors.repassword}</span>}
               </FloatingLabel>  
           </InputGroup>
               <button className="loginButton" >Sign Up</button>
-              </form>
+      </form>
 
             </div>
           </div>
