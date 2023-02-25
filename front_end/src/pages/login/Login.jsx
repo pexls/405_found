@@ -2,6 +2,7 @@ import "./login.css";
 
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -63,7 +64,7 @@ if(name==="email"){
                   window.localStorage.setItem('email',this.state.email)
                   window.localStorage.setItem('id',ele.id)
 
-                  // window.location.assign('/home')
+                  window.location.assign('/home')
 
                   
 
@@ -87,21 +88,21 @@ if(name==="email"){
           </span>
         </div>
         <div className="loginRight" >  
-        <form className="loginRight" onSubmit={this.handleSubmit} noValidate >
+      
           <div className="loginBox">
-        
+          <form className="loginRight" onSubmit={this.handleSubmit} noValidate >
 
             <input  placeholder="Email" className="loginInput" type='email' name='email' onBlur={this.handleBlur} noValidate />
             <input placeholder="Password" className="loginInput" type='password' name='password' onBlur={this.handleBlur} noValidate />
             <button className="loginButton">Log In</button>
+            </form>
             <p className="errorr" id="err"></p>
             <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
-              Create a New Account
-            </button>
+
+            <a href="/register">Create a New Account</a>
 
           </div>
-          </form>
+          
         </div>
       </div>
     </div>
