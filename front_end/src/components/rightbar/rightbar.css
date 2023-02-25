@@ -62,56 +62,9 @@
     align-items: center;
   }
   
-  .birthdayImg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
   
-  .birthdayText {
-    font-weight: 300;
-    font-size: 15px;
-  }
   
-  .rightbarAd {
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px 0;
-  }
   
-  .rightbarTitle{
-      margin-bottom: 20px;
-  }
-  
-  .rightbarFriendList {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .rightbarTitle{
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .rightbarInfo{
-    margin-bottom: 30px;
-  }
-  
-  .rightbarInfoItem{
-    margin-bottom: 10px;
-  }
-  
-  .rightbarInfoKey{
-    font-weight: 500;
-    margin-right: 15px;
-    color: #2e2e2e;
-  }
-  
-  .rightbarInfoValue{
-    font-weight: 300;
-  }
   
   .rightbarFollowings{
     display: flex;
@@ -133,43 +86,36 @@
     border-radius: 5px;
   }
 
-  .main .container .right{
+ .right{
     height: max-content;
     position: sticky;
     top: var(--sticky-top-right);
     bottom: 0;
 }
 
-.right .messages{
+.messages{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     
 }
 
-.right .messages .heading{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
+ 
 
-.right .messages i{
-    font-size: 1.4rem;
-}
 
-.right .messages .search-bar{
+
+.search-bar{
     display: flex;
     margin-bottom: 1rem;
 }
 
-.right .messages .category{
+.category{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.right .messages .category h6{
+.category h6{
     width: 100%;
     text-align: center;
     border-bottom: 4px solid var(--color-light);
@@ -177,39 +123,40 @@
     font-size: 0.85rem;
 }
 
-.right .messages .category .active{
+ .active{
     border-color: var(--color-dark);
 }
 
-.right .messages .message-requests{
+ .message-requests{
     color: var(--color-primary);
 }
 
-.right .message .profile-pic{
+ .profile-pic{
     position: relative;
     overflow: visible;
+    
 }
 
-.right .profile-pic img{
+.profile-pic img{
     border-radius: 50%;
 }
 
-.right .messages .message{
+ .message{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
     align-items: start;
 }
 
-.right .messages .message:last-child{
+ .message:last-child{
     margin: 0;
 }
 
-.right .messages .message p{
+p{
     font-size: 0.8rem;
 }
 
-.right .messages .message .profile-pic .active{
+ .profile-pic .active{
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
@@ -222,29 +169,29 @@
 }
 
 
-.right .friend-requests{
+ .friend-requests{
     margin-top: 1rem;
 }
 
-.right .friend-requests h4{
+ .friend-requests h4{
     color: var(--color-gray);
     margin: 1rem 0;
 }
 
-.right .request{
+ .request{
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
 }
 
-.right .request .info{
+ .info{
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.right .request .action{
+.action{
     display: flex;
     gap: 1rem;
 }
