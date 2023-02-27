@@ -2,8 +2,10 @@
 import "./rightbar.css";
 import { Users } from "../../dummyData/dummyData";
 import Online from "../online/Online";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Rightbar({ profile }) {
   const HomeRightbar = () => {
@@ -22,88 +24,69 @@ export default function Rightbar({ profile }) {
   };
 
   const ProfileRightbar = () => {
+
+
+    const [showProfile, setShowProfile]=useState([])
+
+    useEffect(()=>{
+      getProfileEdit();
+    }, []);
+
+    const getProfileEdit = ()=>{
+
+      axios.get('http://localhost/405_found/back_end/profile.php')
+        .then(function(response){
+          //console.log(response.data); 
+          setShowProfile(response.data);  
+      } )
+
+      
+    }
+
     return (
       <>
+        
+      <div>
+
         <h4 className="rightbarTitle">User information</h4>
-        <div className="rightbarInfo">
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">City:</span>
-            <span className="rightbarInfoValue">Jorden</span>
+        {showProfile.map((user, key)=>
+        <div key={key} className="rightbarInfo">
+          
+          <div >
+            <div className="rightbarInfoItem">
+              <span className="rightbarInfoKey">Name:</span>
+              <span className="rightbarInfoValue">{user.fullName}</span>
+            </div>
+            <div className="rightbarInfoItem">
+              <span className="rightbarInfoKey">Email:</span>
+              <span className="rightbarInfoValue">{user.email}</span>
+            </div>
+            <div className="rightbarInfoItem">
+              <span className="rightbarInfoKey">Mobile</span>
+              <span className="rightbarInfoValue">{user.phone}</span>
+            </div>
           </div>
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue">Mafraq</span>
-          </div>
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightbarInfoValue">Single</span>
-          </div>
+      
+         
           {/* --------------------------  Edit profile ------------------ */}
 
           <button class="EditJs style" id="editbtn" type="button">
-            <Link to={'/editprofile'}>Edit profile</Link>
+            <Link to={`/${user.id}/EditProfile`}>Edit profile</Link>
           </button>
 
         </div>
-        
+      
+        )}
 
         {/* ----------------------User friends----------------  */}
 
 
-        <h4 className="rightbarTitle">User friends</h4>
-        <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/7.jpg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">wa7ed</span>
-          </div>
+       
         </div>
       </>
     );
   };
+
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">

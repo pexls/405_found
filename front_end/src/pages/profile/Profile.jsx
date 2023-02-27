@@ -2,12 +2,32 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
+import { useState, useEffect } from "react";
+import axios from "axios";
+// import { Link } from 'react-router-dom';
+
 
 import "./profile.css"
 
-export default function Profile() {
+const EditProfile = () => {
+
+    const [showProfile, setShowProfile]=useState([])
+
+    useEffect(()=>{
+      getProfileEdit();
+    }, []);
+
+    const getProfileEdit = ()=>{
+
+      axios.get('http://localhost/405_found/back_end/profile.php')
+        .then(function(response){
+         // console.log(response.data); 
+          setShowProfile(response.data);  
+      } )
+
+      
+    }
+
 
  
 
@@ -17,6 +37,7 @@ export default function Profile() {
       <div className="profile">
         <Sidebar />
         <div className="profileRight">
+          
           <div className="profileRightTop">
 
             <div className="profileCover">
@@ -25,16 +46,18 @@ export default function Profile() {
               <img className="profileUserImg" src="./assets/person/7.jpg" alt="" />
           
             </div>
-
-            <div className="profileInfo">
-              <h4 className="profileInfoName">mohammed al maslamani</h4>
-              <span className="profileInfoDesc">full stack web divlobar</span>
+            {showProfile.map((user, key)=>
+            <div key={key} className="profileInfo">
+              <h4 className="profileInfoName">{user.fullName}</h4>
+              <span className="profileInfoDesc">{user.email}</span>
+              <span className="profileInfoDesc">{user.phone}</span>
             </div>
 
             
-
+            )}
 
           </div>
+          
           <div className="profileRightBottom">
             <Feed/>
             <Rightbar profile/>
@@ -48,3 +71,4 @@ export default function Profile() {
   )
 }
 
+export default EditProfile

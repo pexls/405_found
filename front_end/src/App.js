@@ -12,17 +12,22 @@ import Groups from "./pages/Groups/Groups";
 
 function App() {
   return(
-    <>
-  <Routes>
-     <Route path="/home" element={ <Home/> } />
-     <Route path="/" element={ <Login/> } />
-     <Route path="/register" element={ <Register/> } />
-     <Route path="/SingleGroup" element={ <SingleGroup/> } />
-     <Route path="/Profile" element={ <Profile/> } />
-     <Route path="/group" element={ <Groups/> } />
 
-   </Routes>
-</>
+    <>
+      <Routes>
+        
+        <Route path="/home" element={ <Home/> } />
+        <Route path="/login" element={ <Login/> } />
+        <Route path="/register" element={ <Register/> } />
+        <Route path="/SingleGroup" element={ <SingleGroup/> } />
+        <Route path="/Profile" element={ <Profile/> } />
+        <Route path="/group" element={ <Groups/> } />
+        {/* <Route path="/editprofile" element={ <EditProfile/> } /> */}
+        <Route path="/:id/EditProfile" element={< EditProfile/>} />
+
+      </Routes> 
+    </>
+
 )
 
 }

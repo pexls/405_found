@@ -1,7 +1,6 @@
 <?php
 
 
-
 class crud{
 
     public static function connect(){
@@ -9,7 +8,7 @@ class crud{
 
         $con=new PDO('mysql:localhost=localhost;dbname=405_found','root','');
 
-       
+    //    echo "hi";
         return $con;
 
     }catch(PDOException $error){
@@ -24,3 +23,5 @@ class crud{
         
     }
 }
+
+   $con = crud::connect();
